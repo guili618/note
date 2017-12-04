@@ -1,13 +1,25 @@
 ## fnmatch 模块专门用来进行文件名匹配，支持使用通配符进行字符串匹配
 
 ### fnmatch 只有4个函数:
-- fnmatch 
-- fnmatcahcase
-- filter
-- translate
+- fnmatch:      判断文件名是否符合特定的模式
+- fnmatchcase: 判断文件名是否符合特定的模式，不区分大小写
+- filter:       返回输入列表中，符合特定模式的文件名列表
+- translate:    将通配符模式转为正则表达式
+
+### fnmatch支持以下通配符
+
+| 通配符 | 含义 |
+| ------ | ------ |
+| *          | 匹配任何数量的字符 |
+| ? | 匹配单个字符 |
+| [seq] | 匹配seq中的字符|
+| [!seq] | 匹配除了seq以外的任何字符 |
+
+
 
 fnmatch.fnmatch示例
 ```python
-import os,fnmatch
+import os
+import fnmatch
 
 ```
