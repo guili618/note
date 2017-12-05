@@ -22,9 +22,21 @@ fnmatch.fnmatch示例
 import os
 import fnmatch
 path = pathname
-pattern_1 = '[a-z][^0-9]*xls?'
+pattern_1 = '[a-z][!0-9]*xls?'
 for files in os.listdir(path):    
     if fnmatch.fnmatch(files,pattern_1):
         print(files)
 ```
 
+```python
+# 利用os.walk(),fnmatch,generators
+# 在目录中寻找文件
+
+def findall(topdir,pattern):
+    for path,dirs,files in os.walk(topdir):
+        for name in files:
+            if fnmatch.fnmatch(name,pattern):
+                yield os.path.join(path,name)
+
+
+```
