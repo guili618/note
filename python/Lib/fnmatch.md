@@ -21,5 +21,10 @@ fnmatch.fnmatch示例
 ```python
 import os
 import fnmatch
-
+path = pathname
+pattern_1 = '[a-z][^0-9]*xls?'
+for files in os.listdir(path):    
+    if fnmatch.fnmatch(files,pattern_1):
+        print(files)
 ```
+
