@@ -15,7 +15,7 @@
 
 ### cron的组成说明
 
-<img src="D:\note\shell\crontab.png">
+![alt text](crontab.png)
 
 | 组成部分 | 含义 |
 | ------ | ------ |
