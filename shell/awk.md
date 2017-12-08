@@ -5,8 +5,8 @@
 - END
 - 带模式匹配选项的常见语句块
 ### 基本结构示例如下
-```bash
-awk 'BEGIN {print "start"} pattern { commands } END {print "end"}' file
+```sh
+$ awk 'BEGIN {print "start"} pattern { commands } END {print "end"}' file
 
 ```
 ### awk的选项如下:
