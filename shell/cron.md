@@ -13,7 +13,9 @@
 00 02 * * * /root/test.sh
 ```
 
-cron的组成说明
+### cron的组成说明
+
+<img src="D:\note\shell\crontab.png">
 
 | 组成部分 | 含义 |
 | ------ | ------ |
