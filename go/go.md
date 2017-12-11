@@ -1,4 +1,4 @@
-Types & Declarations
+### Types & Declarations
 ```go
 age := 80
 name := "daffy"
@@ -11,7 +11,7 @@ ages := map[string]int{ // Correct for 2017
 }
 
 ```
-Define A Function
+### Define A Function
 ```go
 // Add adds a to b
 func Add(a, b int) int {
@@ -20,7 +20,7 @@ func Add(a, b int) int {
 
 ```
 
-list/slice
+### list/slice
 ```go
 names := []string{"bugs", "taz", "tweety"}
 fmt.Println(names[0]) // bugs
@@ -35,7 +35,7 @@ for i, name := range names {
 }
 
 ```
-dict/map
+### dict/map
 ```go
 ages := map[string]int{ // Correct for 2017
     "daffy": 80,
@@ -56,7 +56,7 @@ for name, age := range ages { // Keys & values
 
 ```
 
-while loop
+### while loop
 ```go
 // Largest Fibonacci under 10,000
 a, b := 1, 1
@@ -68,7 +68,7 @@ for b < 10000 {
 ```
 
 
-Files
+### Files
 ```go
 file, err := os.Open("song.txt")
 if err != nil {
@@ -83,7 +83,7 @@ for scanner.Scan() {
 return scanner.Err()
 
 ```
-Exceptions/Return Error
+### Exceptions/Return Error
 ```go
 func div(a, b int) (int, error) {
     if b == 0 {
@@ -100,11 +100,11 @@ if err != nil {
 }
 
 ```
-Concurrency
+### Concurrency
 ```go
 go add(1, 2)
 ```
-Communicating between threads/goroutines
+### Communicating between threads/goroutines
 ```go
 
 ch := make(chan int)
@@ -122,7 +122,7 @@ ch <- 353
 val := <-ch
 
 ```
-Sorting
+### Sorting
 ```go
 
 // ByLen implements sort.Interface
@@ -144,7 +144,7 @@ sort.Sort(ByLen(names))
 
 ```
 
-Web Server
+### Web Server
 ```go
 package main
 
@@ -162,7 +162,7 @@ func main() {
     http.ListenAndServe(":8080", nil)
 }
 ```
-HTTP Request
+### HTTP Request
 ```go
 url := "https://httpbin.org/ip"
 resp, err := http.Get(url)
@@ -178,7 +178,7 @@ if err := dec.Decode(&reply); err != nil {
 fmt.Println(reply["origin"])
 ```
 
-Encode/Decode JSON
+### Encode/Decode JSON
 ```go
 // We can also use anonymous struct
 type Loon struct {
@@ -203,7 +203,7 @@ if err := enc.Encode(loon); err != nil {
 
 
 ```
-Print Object for Debug/Log
+### Print Object for Debug/Log
 ```go
 daffy := Actor{
     Name: "Daffy",
@@ -214,7 +214,7 @@ fmt.Printf("%#v\n", daffy)
 
 ```
 
-Object Oriented
+### Object Oriented
 ```go
 type Cat struct {
     name string
@@ -232,19 +232,4 @@ func (c *Cat) Greet(other string) {
 
 c := NewCat("Grumpy")
 c.Greet("Grafield")
-```
-
-
-```go
-
-```
-
-
-```go
-
-```
-
-
-```go
-
 ```
