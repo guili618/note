@@ -16,6 +16,18 @@
 - 注意不能直接把文件名的字符串传递给 csv.reader() 函数
 - 在这个 Reader 对象上应用 list() 函数，将返回一个列表的列表，可以将它保存在变量 data 中
 - 最后用 data[row][col] 来访问特定行和列的值，中 row 是data 中一个列表的下标， col是该列表中你想访问的项的下标
+
+### 示例 csv 文件如下
+```csv
+4/5/2015 13:34,Apples,73
+4/5/2015 3:41,Cherries,85
+4/6/2015 12:46,Pears,14
+4/8/2015 8:59,Oranges,52
+4/10/2015 2:07,Apples,152
+4/10/2015 18:10,Bananas,23
+4/10/2015 2:40,Strawberries,98
+```
+
 ```python
 >>> import csv
 >>> file = open(r'D:\\example.csv')
@@ -26,5 +38,29 @@
 >>> data
 [['4/5/2015 13:34', 'Apples', '73'], ['4/5/2015 3:41', 'Cherries', '85'], ['4/6/2015 12:46', 'Pears', '14'], ['4/8/2015 8:59', 'Oranges', '52'], ['4/10/2015 2:07', 'Apples', '152'], ['4/10/2015 18:10', 'Bananas', '23'], ['4/10/2015 2:40', 'Strawberries', '98']]
 >>> 
+
+```
+### 用 for 循环从 Reader 对象中读取数据
+- 对于大型的 csv 文件，需要在一个 for 循环中使用 Reader 对象，避免将整个文件一次性的装入内存
+- Reader 对象的 line_num 变量，包含当前行的编号
+- Reader 对象只能遍历一次，要再次读取 csv 文件，必须调用 csv.reader,创建一个对象 
+
+```python
+>>> import csv
+>>> file = open(r'D:\\example.csv')
+>>> filereader = csv.reader(file)
+>>> for row in filereader:
+	print('Row #' + str(filereader.line_num) + '  ' + str(row))
+
+	
+Row #1  ['4/5/2015 13:34', 'Apples', '73']
+Row #2  ['4/5/2015 3:41', 'Cherries', '85']
+Row #3  ['4/6/2015 12:46', 'Pears', '14']
+Row #4  ['4/8/2015 8:59', 'Oranges', '52']
+Row #5  ['4/10/2015 2:07', 'Apples', '152']
+Row #6  ['4/10/2015 18:10', 'Bananas', '23']
+Row #7  ['4/10/2015 2:40', 'Strawberries', '98']
+>>> 
+
 
 ```
