@@ -18,3 +18,13 @@
 (221, b'Bye')
 >>> 
 ```
+
+```python
+
+>>> from imapclient import IMAPClient
+>>> server = IMAPClient('imap.qq.com', use_uid=True)
+>>> server.login('username','password')
+b'Success login ok'
+>>> import pprint
+>>> pprint.pprint(mail.list_folers())
+```
