@@ -6,7 +6,7 @@
 
 import cx_Oracle
 
->>> connection = cx_Oracle.connect(r"classroom/classroom@192.168.22.235:1521/nettest")
+>>> conn   = cx_Oracle.connec(r"classroom/classroom@192.168.22.235:1521/nettest")
 >>> cursor = conn.cursor()
 >>> cursor.execute('select sysdate from dual')
 <cx_Oracle.Cursor on <cx_Oracle.Connection to classroom@192.168.22.235:1521/nettest>>
