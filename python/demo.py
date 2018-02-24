@@ -1,5 +1,5 @@
 import time 
-from clockdeco import clock
+from clockdeco2 import clock
 
 @clock
 def snooze(seconds):
