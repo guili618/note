@@ -1,14 +1,16 @@
 ## awk是一设计用于数据流的工具，它可以对行和列进行操作，并且有很多内建的功能，如数组、函数
-
+***
 ### awk的脚本的基本结构由三部分组成(三个部分都是可选项，脚本中可省略任意部分)
 - BEGIN
 - END
 - 带模式匹配选项的常见语句块
+***
 ### 基本结构示例如下
 ```sh
 $ awk 'BEGIN {print "start"} pattern { commands } END {print "end"}' file
 
 ```
+***
 ### awk的选项如下:
 | 选项           | 描述 |
 | ------        | ------ |
@@ -19,7 +21,7 @@ $ awk 'BEGIN {print "start"} pattern { commands } END {print "end"}' file
 | -mr N	        | 指定数据文件中的最大数据行 |
 | -w 	        | 指定awk的兼容模式或者警告等级 |
 
-
+***
 ### awk的命令工作方式如下:
 - 执行 BEGIN { commands } 语句块中的语句
 - 从文件或者stdin中读取一行，然后执行 pattern { commands },重复这个过程，直到文件全部被读取完毕
@@ -40,3 +42,49 @@ $ awk 'BEGIN {print "start"} pattern { commands } END {print "end"}' file
 | OFS	 | 输出字段分隔符， 默认也是空格 |
 | ORS	 | 输出的记录分隔符，默认为换行符 |
 | FILENAME| 当前输入文件的名字 |
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
+### awk 示例1
+```bash
+
+```
+***
