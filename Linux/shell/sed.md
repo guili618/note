@@ -16,3 +16,11 @@ $ sed [-nefr] 动作
 | -f    | 直接将 sed 的动作写在一个文件内，-f filename 则可以执行filename 内的sed 动作 |
 | -r    | sed 的动作支持的是扩展型正则表达式的语法(默认是基础正则表达式语法) |
 | -i    | 直接修改读取文件内容，而不是由屏幕输出 |
+
+### 示例1 文本替换
+
+```bash
+
+$ echo "Welcome to LikeGeeks page" | sed 's/page/website/'
+Welcome to LikeGeeks website
+```
