@@ -43,28 +43,101 @@ $ awk 'BEGIN {print "start"} pattern { commands } END {print "end"}' file
 | ORS	 | 输出的记录分隔符，默认为换行符 |
 | FILENAME| 当前输入文件的名字 |
 ***
-### awk 示例1
+### awk 示例1--利用变量
+- $0 代表整一行
+- $1 代表第一个字段.
+- $2 代表第二个字段.
+- $n 代表第三个字段.
 ```bash
+$ echo 'Welcome to awk command tutorial' | awk '{print $1,$2}'
+Welcome to
 
 ```
 ***
-### awk 示例1
+### awk 示例2--指定分割符号
 ```bash
+$ awk -F: '{print $1}' /etc/passwd #这里指定冒号为分隔符
 
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mai
+...
 ```
 ***
-### awk 示例1
+### awk 示例3--多个命令用分号隔开
 ```bash
-
+$ echo "Hello World" | awk '{$2="Python"; print $0}'
+Hello Python
 ```
 ***
-### awk 示例1
+### awk 示例4--从awk脚本中读取命令
 ```bash
+$ cat awktestfile 
+{print $1 " home at " $6}
 
+$ awk -F: -f awktestfile /etc/passwd
+root home at /root
+daemon home at /usr/sbin
+bin home at /bin
+sys home at /dev
+sync home at /bin
+games home at /usr/games
+man home at /var/cache/man
+...
 ```
 ***
-### awk 示例1
+### awk 示例5--awk的预处理
 ```bash
+$ awk 'BEGIN {print "The File Contents:"} {print $0}' myfile
+
+
+$ cat awkprocess 
+BEGIN {
+ 
+print "Users and their corresponding home"
+ 
+print " UserName \t HomePath"
+ 
+print "___________ \t __________"
+ 
+FS=":"
+ 
+}
+ 
+{
+ 
+print $1 "  \t  " $6
+ 
+}
+ 
+END {
+ 
+print "The end"
+ 
+}
+
+$ awk -f awkprocess /etc/passwd
+Users and thier corresponding home
+ UserName 	 HomePath
+___________ 	 __________
+root  	  /root
+daemon  	  /usr/sbin
+bin  	  /bin
+sys  	  /dev
+sync  	  /bin
+games  	  /usr/games
+man  	  /var/cache/man
+lp  	  /var/spool/lpd
+mail  	  /var/mail
+news  	  /var/spool/news
+uucp  	  /var/spool/uucp
+proxy  	  /bin
 
 ```
 ***
