@@ -92,11 +92,12 @@ man home at /var/cache/man
 ...
 ```
 ***
-### awk 示例5--awk的预处理
+### awk 示例5--awk的预处理和尾处理
+
 ```bash
 $ awk 'BEGIN {print "The File Contents:"} {print $0}' myfile
 
-
+$ awk 'BEGIN {print "The File Contents:"} {print $0} END {print "File footer"}' myfile
 $ cat awkprocess 
 BEGIN {
  
@@ -141,22 +142,57 @@ proxy  	  /bin
 
 ```
 ***
-### awk 示例1
+### awk 示例6--内建变量的使用
+| 变量名称 | 含义 |
+| ------ | ------ |
+| FS-- Specifies the field separator.	 | 输入字段分隔符，默认是空格或Tab |
+| RS--Specifies the record separator.	 | 输入记录分隔符， 默认为换行符 |
+| OFS--Specifies the Output separator.	 | 输出字段分隔符， 默认也是空格 |
+| ORS--Specifies the Output separator.	 | 输出的记录分隔符，默认为换行符 |
+
+```bash
+$  awk 'BEGIN{FS=":"; OFS="-"} {print $1,$6,$7}' /etc/passwd
+root-/root-/bin/bash
+daemon-/usr/sbin-/usr/sbin/nologin
+bin-/bin-/usr/sbin/nologin
+sys-/dev-/usr/sbin/nologin
+sync-/bin-/bin/sync
+games-/usr/games-/usr/sbin/nologin
+man-/var/cache/man-/usr/sbin/nologin
+lp-/var/spool/lpd-/usr/sbin/nologin
+mail-/var/mail-/usr/sbin/nologin
+news-/var/spool/news-/usr/sbin/nologin
+uucp-/var/spool/uucp-/usr/sbin/nologin
+proxy-/bin-/usr/sbin/nologin
+...
+```
+***
+### awk 示例7
 ```bash
 
 ```
 ***
-### awk 示例1
+### awk 示例8
 ```bash
 
 ```
 ***
-### awk 示例1
+### awk 示例9
 ```bash
 
 ```
 ***
-### awk 示例1
+### awk 示例7
+```bash
+
+```
+***
+### awk 示例8
+```bash
+
+```
+***
+### awk 示例9
 ```bash
 
 ```
