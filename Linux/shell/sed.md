@@ -6,6 +6,7 @@
 ### sed 命令结构如下：
 ```sh
 $ sed [-nefr] 动作
+$ sed options file
 ```
 ### sed 命令参数说明如下
 
@@ -23,4 +24,5 @@ $ sed [-nefr] 动作
 
 $ echo "Welcome to LikeGeeks page" | sed 's/page/website/'
 Welcome to LikeGeeks website
+
 ```
