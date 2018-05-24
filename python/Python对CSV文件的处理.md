@@ -62,8 +62,7 @@
 
 import csv
 >>> with open(r'example.csv') as csv_file:
-	csv_reader = csv.reader(csv_file)
-	for row in csv_reader:
+	for row in csv.reader(csv_file):
 		print('Row No.' + str(csv_reader.line_num) + ' --> ' + str(row))
 
 		
@@ -74,4 +73,6 @@ Row No.4 --> ['4/8/2014 8:59', 'Oranges', '52']
 Row No.5 --> ['4/10/2014 2:07', 'Apples', '152']
 Row No.6 --> ['4/10/2014 18:10', 'Bananas', '23']
 Row No.7 --> ['4/10/2014 2:40', 'Strawberries', '98']
+
 ```
+
