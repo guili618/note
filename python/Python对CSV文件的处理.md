@@ -75,4 +75,11 @@ Row No.6 --> ['4/10/2014 18:10', 'Bananas', '23']
 Row No.7 --> ['4/10/2014 2:40', 'Strawberries', '98']
 
 ```
+---
 
+### 示例3--写入CSV文件
+
+```python
+import csv
+
+```
