@@ -6,3 +6,10 @@ $ curl -H "Accept: application/json" -H "Content-type: application/json" -X POST
 
 
 ```
+---
+### curl 回写数据
+```bash
+$ curl -s -o /dev/null -w "status_code is %{http_code} ,the time is %{time_total}\n"  http://httpbin.org/
+
+
+```
