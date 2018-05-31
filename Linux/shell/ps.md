@@ -14,29 +14,29 @@
 |  -a    | 显示除了控制进程和无终端进程外的所有进程|
 |  -d    | 显示除了控制进程外的所有进程|
 |  -e    | 显示所有进程|
-|  -C  cmslist | Shows processes contained in the list cmdlist  |
-|  -G  grplist | Shows processes with a group ID listed in grplist  |
-|  -U  userlist|  Shows processes owned by a userid listed in userlist  |
-|  -g  grplist | Shows processes by session or by groupid contained in grplist  |
-|  -p  pidlist | Shows processes with PIDs in the list pidlist  |
-|  -s  sesslist|  Shows processes with session ID in the list sesslist  |
-|  -t  ttylist | Shows processes with terminal ID in the list ttylist  |
-|  -u  userlist|  Shows processes by effective userid in the list userlist  |
-|  -F    | Uses extra full output|
-|  -O    | format Displays speciic columns in the list format, along with the defaultcolumns|
-|  -M    | Displays security information about the process|
-|  -c    | Shows additional scheduler information about the process|
-|  -f    | Displays a full format listing|
-|  -j    | Shows job information|
-|  -l    | Displays a long listing|
-|  -o    | format Displays only speciic columns listed in format|
-|  -y    | Prevents display of process lags|
-|  -Z    | Displays the security context information|
-|  -H    | Displays processes in a hierarchical format (showing parent processes)|
-|  -n    | namelist Deines the values to display in the WCHAN column|
-|  -w    | Uses wide output format, for unlimited width displays|
-|  -L    | Shows process threads|
-|  -V    | Displays the version of ps|
+|  -C  cmslist | 显示  包含在  cmdlist 列表中的进程  |
+|  -G  grplist | 显示  组 ID 在 grplist 列表中的进程  |
+|  -U  userlist| 显示  属主的用户 ID 在 userlist 列表中的进程  |
+|  -g  grplist | 显示  会话或组 ID 在 grplist 列表中的进程  |
+|  -p  pidlist | 显示  PID 在 pidlist 列表中的进程  |
+|  -s  sesslist| 显示  会话 ID 在 sesslist 列表中的进程  |
+|  -t  ttylist | 显示  终端 ID 在 ttylist 列表中的进程  |
+|  -u  userlist| 显示  有效用户 ID 在 userlist 列表中的进程  |
+|  -F    | 显示更多的额外输出(相对于 -f 参数)|
+|  -O  format | 显示默认的输出列以及由 format 列表指定的特定列|
+|  -M    | 显示进程的安全信息|
+|  -c    | 显示进程的额外调度器信息|
+|  -f    | 显示完整的格式输出|
+|  -j    | 显示任务信息|
+|  -l    | 显示长列表 |
+|  -o    | 仅显示format指定的列 |
+|  -y    | 不要显示进程标签|
+|  -Z    | 显示安全标签信息|
+|  -H    | 用层级格式来显示进程(树型，用来显示父进程)|
+|  -n    | 定义了 WCHAN 列显示的值|
+|  -w    | 采用宽输出模式，不限宽度显示|
+|  -L    | 显示进程中的线程|
+|  -V    | 显示 PS 命令的版本号|
 
 ### ps -ef 输出字段说明
 ```sh
