@@ -3,11 +3,10 @@
 
 ### 
 
-| 操作           | 示例代码 |
-| ------        | ------ |
-| Create an object without saving        | board = Board() |
-| -f fileSave an object (create or update)       | board.save() |
-| Create and save an object in the database  | Board.objects.create(name='...', description='...') |
-| List all objects	        | Board.objects.all() |
-| Get a single object, identified by a field	        | Board.objects.get(id=1) |
-| -w 	        | 指定awk的兼容模式或者警告等级 |
+| 操作   | 示例代码 |
+| ------ | ------ |
+| 创建对象但没有保存   | board = Board() |
+| 保存对象（创建或更新）| board.save() |
+| 在数据库中创建并保存一个对象 | Board.objects.create(name='...', description='...') |
+| 列出某个类（数据库某张表）的所有对象（所有字段） | Board.objects.all() |
+| 根据对象的某个属性（字段）取得值| Board.objects.get(id=1) |
