@@ -373,3 +373,43 @@ class Membership(models.Model):
 
 一旦通过创建中间模型的实例建立了多对多关系，就可以发出查询。与正常的多对多关系一样，您可以使用多对多关联模型的属性进行查询
 
+```python
+# Find all the groups with a member whose name starts with 'Paul'
+>>> Group.objects.filter(members__name__startswith='Paul')
+<QuerySet [<Group: The Beatles>]>
+
+```
+在您使用中间模型时，您还可以查询其属性：
+
+```python
+# Find all the members of the Beatles that joined after 1 Jan 1961
+>>> Person.objects.filter(
+...     group__name='The Beatles',
+...     membership__date_joined__gt=date(1961,1,1))
+<QuerySet [<Person: Ringo Starr]>
+
+```
+
+
+如果您需要访问membership信息，您可以直接查询membership模型：
+```python
+>>> ringos_membership = Membership.objects.get(group=beatles, person=ringo)
+>>> ringos_membership.date_joined
+datetime.date(1962, 8, 16)
+>>> ringos_membership.invite_reason
+'Needed a new drummer.'
+
+```
+
+访问相同信息的另一种方法是通过查询Person对象中的多对多反向关系：
+```python
+
+>>> ringos_membership = ringo.membership_set.get(group=beatles)
+>>> ringos_membership.date_joined
+datetime.date(1962, 8, 16)
+>>> ringos_membership.invite_reason
+'Needed a new drummer.'
+```
+
+### 一对一的关系
+
