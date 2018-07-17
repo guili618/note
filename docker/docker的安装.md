@@ -49,3 +49,6 @@ WARNING: Adding a user to the "docker" group will grant the ability to run
          Refer to https://docs.docker.com/engine/security/security/#docker-daemon-attack-surface
          for more information.
 ```
+
+### 我的加速地址--阿里云
+https://cr.console.aliyun.com/#/accelerator

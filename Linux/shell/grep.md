@@ -1,4 +1,4 @@
-grep 基本用法：
+## grep 基本用法：
 
 ```bash
 grep [-acniv] [-A] [-B]  [--color=auto] '查找字符串' filename
@@ -9,6 +9,8 @@ grep [-acniv] [-A] [-B]  [--color=auto] '查找字符串' filename
 
 -i 忽略大小写的不同
 
+-l 输出匹配的文件名而不是直接输出匹配行
+
 -n 顺便输出行号
 
 -v 反向选择，即显示出没有找到 '字符串' 内容的那一行
@@ -18,7 +20,7 @@ grep [-acniv] [-A] [-B]  [--color=auto] '查找字符串' filename
 -B 后面加数字，为before的意思，除了该行外，前面的 n 行也列出来
 
 ```
-grep 示例：
+###　grep 示例：
 ```bash
 grep -n 't[ae]st' filename  #[]中为一个待查找的字符，该句意为查找tast或test
 
