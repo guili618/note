@@ -59,7 +59,7 @@
 ### 显示已安装的软件包的相关信息
 | 系统类型 | 命令 |
 | ------ | ------ |
-| Debian 类  | apt-cache show pkg_name |
+| Debian 类  | apt-cache show pkg_name &per aptitude show pkg_name |
 | Red Hat 类  | yum info pkg_name|
 ---
 ### 查看某个具体文件由哪个安装包得到
