@@ -1,41 +1,17 @@
-## shell编程中的条件语句
+## shell编程中的函数
 ---
-### [1.if条件语句的一般格式](#if条件语句的一般格式)
-### [2.case条件语句的一般格式](#case条件语句的一般格式)
-
-
-### if条件语句的一般格式
-
+###　函数的定义
+- 定义方式1
 ```sh
-if command
-then 
-        command
-        command
-elif command
-then 
-        command
-        command
-else
-fi
-
+function name {
+        commands
+        return #可选
+}
 ```
----
-
-### case条件语句的一般格式
-**pattern 中可以使用shell的通配符**
-- ? 代表任意单个字符
-- \* 代表0或多个任意字符
-- [...] 可以用来指定中括号里面出现的任意单个字符
-- | 用在两个模式之间，其效果等同于逻辑  "或"
+- 定义方式2
 ```sh
-case value  
-in
-        pattern1) command;;  
-        pattern2) command;;
-        pattern3) command;;
-        pattern4) command;;
-        pattern5|pattern6) command;;
-esac
-
+name() {
+        commands
+        return #可选
+}
 ```
----
