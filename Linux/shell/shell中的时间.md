@@ -78,3 +78,11 @@ sys	0m0.060s
 - Real时间指的是挂钟时间，就是命令从开始执行到结束的时间
 - User时间指的是花费在用户模式（内核之外）的cpu时间。这是唯一真正用于执行进程所花费的时间
 - Sys时间指的是进程花费在内核中的cpu时间
+
+#### 使用参照 %Z 显示系统页面大小 
+```sh
+
+$ /usr/bin/time -f "Page size: %Z bytes" ./fast_ping.sh> /dev/null
+Page size: 4096 bytes
+
+```
