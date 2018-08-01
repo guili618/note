@@ -129,7 +129,7 @@ b
 c
 #######################################
 $ foo=([2]=a [4]=b [6]=c)
-guiax@ubuntu-guiax:~$ for i in "${!foo[@]}"; do echo $i; done
+$ for i in "${!foo[@]}"; do echo $i; done
 2
 4
 6
@@ -176,3 +176,64 @@ echo "Sorted array: ${a_sorted[@]}"
 
 
 ```
+
+### 关联数组(associative arrays)
+> bash 4.0版本才开始支持，类似于python中的dict
+- 关联数组的定义
+```sh
+$ declare -A ass_array
+
+```
+- 将元素添加进关联数组
+  
+```sh
+$ ass_array=([index1]=val1 [index2]=val2)
+########################################
+
+$ ass_array[index3]=val3
+$ ass_array[index4]=val4
+
+########################################
+$ declare -A fruits_value
+$ fruits_value=([apple]='100dollars' [orange]='150 dollars')
+$ echo "Apple costs ${fruits_value[apple]}"
+Apple costs 100 dollars
+```
+- 列出数组索引
+
+
+```sh
+
+$ echo ${!fruits_value[*]}
+orange apple
+$ echo ${!fruits_value[@]}
+orange apple
+
+```
+
+- 关联数组中元素的迭代
+
+```sh
+$ declare -A ass_array=( [index1]=element1 [index2]=element2 )
+$ echo "${!ass_array[@]}"  # Print all keys - quoted, but quotes removed by echo
+index1 index2
+
+$ # Loop through all keys in an associative array
+$ for K in "${!ass_array[@]}"; do echo $K; done
+index1
+index2
+
+$ # Looping through keys and values in an associative array
+$ for K in "${!ass_array[@]}"; do echo $K --- ${ass_array[$K]}; done
+index1 --- element1
+index2 --- element2
+
+$ # Loop through all values in an associative array
+$ for V in "${ass_array[@]}"; do echo $V; done
+element1
+element2
+
+```
+#### 参考文档
+> https://www.artificialworlds.net/blog/2012/10/17/bash-associative-array-examples/
+> 
