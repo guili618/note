@@ -1,0 +1,1 @@
+## Django的异步任务处理(celery 和 rabbitmq)
