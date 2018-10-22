@@ -18,3 +18,10 @@ hello hello
 hello hello
 
 ```
+
+```bash
+find . -name '*.py' -print0 | xargs -0 grep 'something' > output.txt
+
+
+find . -name '*.py' -exec grep 'something' {} \; > output.txt
+```
