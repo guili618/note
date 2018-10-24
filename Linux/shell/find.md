@@ -60,3 +60,59 @@ $ find . ! -name "*.txt" -print
 
 ```
 > 上面的命令匹配不以txt结尾的文件
+
+### 示例6 -- 根据目录的深度搜索
+- maxdepth表示find搜索的最大深度
+- mindepth表示find搜索的最小深度
+  
+```sh
+$ find . -maxdepth 1 -name "f*" -print
+
+$ find . -mindepth 2 -name "f*" -print
+./dir1/dir2/file1
+./dir3/dir4/f2
+```
+> -maxdepth和-mindepth应该作为find的第三个参数出现，不然会影响效率
+
+### 示例7 -- 根据文件的类型进行搜索
+
+| 文件类型 | 类型参数 |
+| ------  | ------ |
+| 普通文件  | f |
+| 符号链接  | l |
+| 目录  | d |
+| 字符设备  | c |
+| 块设备  | b |
+| socket  | s |
+| FIFO  | p |
+
+```sh
+列出目录
+$ find . -type d -print 
+列出普通文件
+$ find . -type f -print
+列出符号链接
+$ find . -type l -print
+
+```
+
+### 示例8 -- 根据文件时间进行搜索
+
+| 时间 | 含义 |
+| ------  | ------ |
+| -atime  | 用户最后一次访问文件的时间 （单位：天） |
+| -mtime  | 文件内容最后一次被修改的时间 （单位：天） |
+| -ctime  | 文件元数据（例如权限或所有权）最后一次改变的时间（单位：天） |
+| -amin | 用户最后一次访问文件的时间 （单位：分钟） |
+| -mmin | 文件内容最后一次被修改的时间 （单位：分钟） |
+| -cmin | 文件元数据（例如权限或所有权）最后一次改变的时间（单位：分钟） |
+- mtime +7 大于七天
+- mtime -7 小于七天
+```sh
+最近7天内被访问过的文件
+$ find . -type f -atime -7 -print
+恰好7天前被访问过的文件
+$ find . -type f -atime 7 -print
+访问时间超过7天的文件
+$ find . -type f -atime +7 -print
+```
