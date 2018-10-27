@@ -18,6 +18,20 @@ $ sed options file
 | -r    | sed 的动作支持的是扩展型正则表达式的语法(默认是基础正则表达式语法) |
 | -i    | 直接修改读取文件内容，而不是由屏幕输出 |
 
+
+### sed模式解析
+```sh
+sed -i 's/original/new/g' file.txt
+```
+解释:
+- sed = Stream EDitor
+- -i = 就地修改，将替换结果应用于原文件
+
+- s = 表示替换命令  substitute command
+- original = 正则表达式 (或者被替换的字符串本身)
+- new = 想要被替换的字符串
+- g = 全局替换 (替换所有的匹配行)
+- file.txt = 文件名称
 ### 示例1 文本替换
 
 ```bash
