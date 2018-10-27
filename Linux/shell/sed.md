@@ -32,11 +32,70 @@ sed -i 's/original/new/g' file.txt
 - new = 想要被替换的字符串
 - g = 全局替换 (替换所有的匹配行)
 - file.txt = 文件名称
-### 示例1 文本替换
+### 示例1 -- 文本替换
 
 ```bash
 
 $ echo "Welcome to LikeGeeks page" | sed 's/page/website/'
 Welcome to LikeGeeks website
+
+```
+- 默认替换第一个匹配
+```bash
+$ echo "hello hello wotld hello" | sed  's/hello/sed/'
+sed hello wotld hello
+```
+- 全局替换
+```bash
+$ echo "hello hello wotld hello" | sed  's/hello/sed/g'
+sed sed wotld sed
+```
+- 从第N处开始匹配
+```bash
+$ echo "hello hello wotld hello hello" | sed  's/hello/sed/1g'
+sed sed wotld sed sed
+$ echo "hello hello wotld hello hello" | sed  's/hello/sed/2g'
+hello sed wotld sed sed
+
+$ echo "hello hello wotld hello hello" | sed  's/hello/sed/3g'
+hello hello wotld sed sed
+
+$ echo "hello hello wotld hello hello" | sed  's/hello/sed/4g'
+hello hello wotld hello sed
+
+```
+```bash
+$ cat sed.txt
+sed
+sed
+sed
+
+awk
+awk
+awk
+
+replace
+replace
+replace
+
+$ cat sed.txt | sed 's/sed/replace-str/g'
+replace-str
+replace-str
+replace-str
+
+awk
+awk
+awk
+
+replace
+replace
+replace
+
+```
+### 示例2 -- 替换文件内容并保存至原文件
+
+- 
+```bash
+$ sed -i 's/awk/replace_str/g' sed.txt 
 
 ```
