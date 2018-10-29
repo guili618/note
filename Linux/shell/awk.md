@@ -167,9 +167,9 @@ proxy-/bin-/usr/sbin/nologin
 ...
 ```
 ***
-### awk 示例7
+### awk 从nginx日志中找出最多访问的
 ```bash
-
+awk '{print $1}' ./nginx.access.log | sort | uniq -c | sort -nr
 ```
 ***
 ### awk 示例8
