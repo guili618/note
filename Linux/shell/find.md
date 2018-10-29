@@ -116,3 +116,9 @@ $ find . -type f -atime 7 -print
 访问时间超过7天的文件
 $ find . -type f -atime +7 -print
 ```
+
+```sh
+find . -name '*.py' -print0 | xargs -0 grep 'something' > output.txt
+
+find . -name '*.py' -exec grep 'something' {} \; > output.txt
+```
