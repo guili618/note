@@ -28,3 +28,12 @@
 
 ### 
 - https://crontab.guru/
+
+
+### 一行命令增加定时任务
+
+```sh
+
+line="59 23 * * * /bin/bash /home/ubuntu/test.sh" && (crontab -u ubuntu -l; echo "$line" ) | crontab -u ubuntu -
+```
+- 用户ubuntu替换为需要的用户
