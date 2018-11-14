@@ -37,3 +37,4 @@
 line="59 23 * * * /bin/bash /home/ubuntu/test.sh" && (crontab -u ubuntu -l; echo "$line" ) | crontab -u ubuntu -
 ```
 - 用户ubuntu替换为需要的用户
+- 参考来源 https://askubuntu.com/questions/58575/add-lines-to-cron-from-script
