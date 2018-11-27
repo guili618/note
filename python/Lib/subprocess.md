@@ -24,3 +24,20 @@ sqlCommand = sql.encoding(encoding='utf-8')
 queryResult, errorMessage = runSqlQuery(sqlCommand, connectString)
 
 ```
+
+### subprocess 中 shell=True 导致的shell注入问题
+- https://security.openstack.org/guidelines/dg_avoid-shell-true.html
+- https://security.openstack.org/guidelines/dg_use-subprocess-securely.html
+避免shell注入
+```python
+
+def count_lines(website):
+    args = ['curl', website]
+    args2 = ['wc', '-l']
+    process_curl = subprocess.Popen(args, stdout=subprocess.PIPE,shell=False)
+    process_wc = subprocess.Popen(args2, stdin=process_curl.stdout,stdout=subprocess.PIPE, shell=False)
+    # Allow process_curl to receive a SIGPIPE if process_wc exits.
+    process_curl.stdout.close()
+    return process_wc.communicate()[0]
+
+```
