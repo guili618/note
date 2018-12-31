@@ -38,3 +38,4 @@ line="59 23 * * * /bin/bash /home/ubuntu/test.sh" && (crontab -u ubuntu -l; echo
 ```
 - 用户ubuntu替换为需要的用户
 - 参考来源 https://askubuntu.com/questions/58575/add-lines-to-cron-from-script
+- https://askubuntu.com/questions/408611/how-to-remove-or-delete-single-cron-job-using-linux-command
