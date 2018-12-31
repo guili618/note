@@ -94,7 +94,7 @@ handler400 = 'mysite.views.my_custom_bad_request_view'
 
 > render(request, template_name, context=None, content_type=None, status=None, using=None)
 
-将给定的模板与给定的上下文字典组合起来，并返回带有该呈现文本的HttpResponse对象。 Django不提供返回TemplateResponse的快捷方式函数，因为TemplateResponse的构造函数提供了与render（）相同的便利级别。
+将给定的模板与给定的上下文字典组合起来，并返回带有该呈现文本的HttpResponse对象。 Django不提供返回TemplateResponse的快捷方式函数，因为TemplateResponse的构造函数提供了与render()相同的便利级别。
 
 ```python 
 from django.shortcuts import render
