@@ -26,7 +26,7 @@ def index():
 
 app.run(debug=True, port=5000, host='127.0.0.1')
 ```
-- 来源：https://stackoverflow.com/questions/15041620/how-to-continuously-display-python-output-in-a-webpage
+- 来源：https://stackoverflow.com/questions/15092961/how-to-continuously-display-python-output-in-a-webpage
 
 - TODO 改成django，并且可以渲染模板
 
