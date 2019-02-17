@@ -32,6 +32,23 @@ func add(a,b int) int {
     return a + b
 }
 ```
+#### 函数签名
+函数类型又叫函数签名，即函数的定义首行去掉函数名，参数名和{}，可以使用fmt.Printf的%T
+格式化参数打印函数的类型
+```go
+package main
+
+import fmt
+
+func add(a,b int) int {
+	return a + b
+}
+
+func main(){
+	fmt.Printf("%T \n",add)
+}
+//函数签名：func(int, int) int
+```
 #### 不定参数
 go支持可变数量的参数，但是注意以下几点：
 - 所有不定参数的类型必须相同
@@ -84,3 +101,24 @@ func main() {
 	fmt.Printf("You won %v %v\n", quantity, prize)
 }
 ```
+
+#### 函数赋值给变量
+```go
+package main
+import f "fmt"
+
+var p = f.Println
+
+func main() {
+	p("函数赋值给变量")
+	f.Printf("%T \n",p)
+}
+
+==============输出====================
+函数赋值给变量
+func(...interface {}) (int, error)
+
+
+```
+
+### 匿名函数
