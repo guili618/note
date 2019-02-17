@@ -122,3 +122,106 @@ func(...interface {}) (int, error)
 ```
 
 ### 匿名函数
+
+匿名函数指没有定义名字符号的函数，除了没有名字，与普通函数完全相同。
+最大的区别是，可以在函数内部定义匿名函数，形成类似嵌套的效果。
+
+匿名函数可以直接调用，保存到变量，作为参数或返回值
+
+#### 匿名函数直接执行
+```go
+package main
+import  "fmt"
+
+func main(){
+	func(s string) {
+		fmt.Println(s)
+	}("hello world")	
+}
+```
+#### 匿名函数赋值给变量
+> 将匿名函数赋值给变量，与为普通函数提供名字标识符有根本的区别。当然，编译器会
+> 为匿名函数生成一个随机的符号名
+```go
+package main
+import  "fmt"
+
+func main(){
+	p := func(s string) string {
+		return s + " world"
+	}
+	fmt.Println(p("hello"))	
+	fmt.Printf("%T \n",p)
+}
+==============输出====================
+hello world
+func(string) string
+
+```
+#### 匿名函数作为参数
+```go
+package main
+import  "fmt"
+
+func wrap(f func() string ) string {
+	fmt.Println("function start wrap")
+	return "wrap the function"
+}
+
+func main(){
+	fn := func() string {
+		return "function fn called"
+	}
+	fmt.Println(fn())
+	fmt.Println(wrap(fn))
+}
+==============输出====================
+function fn called
+function start wrap
+wrap the function
+
+```
+
+#### 匿名函数作为返回值
+
+```go
+package main
+import  "fmt"
+
+func add() func(int,int) int {
+	return func(x,y int) int {
+		return x + y
+	}
+}
+
+func main(){
+	f := add()
+	fmt.Println(f(1,2))
+}
+
+
+```
+
+#### 不曾使用的匿名函数会被编译器当成错误
+
+```go
+package main
+import  "fmt"
+func main(){
+	func(s string){
+		fmt.Println(s)
+	}
+}
+==============输出====================
+func literal evaluated but not used
+```
+
+
+#### 普通函数和匿名函数均可作为结构体字段，或经过通道传输
+
+
+> 除了闭包外，匿名函数也是常见的一种重构手段。可将大函数分解为多个相对独立的匿名函数块，然后用相对简洁
+> 的调用完成逻辑流程，以实现框架和细节分离
+
+> 相比语句块，匿名函数的作用域被隔离（不使用闭包），不会引发外部污染，更加灵活。没有定义顺序限制，必要时
+> 可抽离，以便于实现干净，清晰的代码层次
