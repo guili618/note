@@ -56,3 +56,61 @@ func main(){
 [1 0 2 3 0]
 ```
 
+### 使用数组
+#### 访问数组元素
+```go
+package main
+import "fmt"
+
+var array = [5]int{0,1,2,3,4}
+func main(){
+    for i:=0;i<5;i++{
+        fmt.Println(array[i])
+    }
+    array[2] = 56
+    fmt.Println(array)
+}
+==============输出====================
+0
+1
+2
+3
+4
+[0 1 56 3 4]
+```
+#### 数组整体赋值
+- go语言中，数组是一个值，这意味着数组可以用在赋值操作中
+- 数组变量的类型包括数组的长度和每个元素的类型，这个两个部分都相同的数组才是同类型数组，才能相互赋值
+
+```go
+package main
+import "fmt"
+
+var array  [5]int
+var array2 [5]int
+func main(){
+	array := [...]int{1,2,3,4,5}
+	array2 = array
+	fmt.Println(array)
+	fmt.Println(array2)
+}
+==============输出====================
+[1 2 3 4 5]
+[1 2 3 4 5]
+```
+数组类型不同，赋值会报错
+```go
+package main
+import "fmt"
+
+var array  [5]int
+var array2 [4]int
+func main(){
+	array := [...]int{1,2,3,4,5}
+	array2 = array
+	fmt.Println(array)
+	fmt.Println(array2)
+}
+==============输出====================
+cannot use array (type [5]int) as type [4]int in assignment
+```
